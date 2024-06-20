@@ -39,9 +39,18 @@ struct A
     A_2 a_2;
 };
 
-DISPLAYABLE(A_1, ival_1)
-DISPLAYABLE(A_2, fval_1, ival_2, a_1)
-DISPLAYABLE(A, ival, bval, a_1_1, a_1_2, a_2)
+#define STRUCT(...) DISPLAYABLE(__VA_ARGS__)
+STRUCT(A_1, ival_1)
+STRUCT(A_2, fval_1, ival_2, a_1)
+STRUCT(A, ival, bval, a_1_1, a_1_2, a_2)
+#undef STRUCT
+
+// The same set of STRUCT() calls, perhaps stored in a .def, could be used multiple times.
+#define STRUCT(...)
+STRUCT(A_1, ival_1)
+STRUCT(A_2, fval_1, ival_2, a_1)
+STRUCT(A, ival, bval, a_1_1, a_1_2, a_2)
+#undef STRUCT
 
 int main()
 {
