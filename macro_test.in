@@ -1,0 +1,9 @@
+#include "macros.h"
+
+#define ADD(a) add(a);
+
+APPLY_3(ADD, a, b, c)
+//SELECT_MACRO_NARGS(a, b, c, APPLY_8, APPLY_7, APPLY_6, APPLY_5, APPLY_4, APPLY_3, APPLY_2, APPLY_1)
+APPLY(ADD, a, b, c)
+APPLY(ADD, a, b)
+APPLY(ADD, a)
