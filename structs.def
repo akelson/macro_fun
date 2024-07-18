@@ -1,0 +1,15 @@
+STRUCT(A, ival);
+
+namespace ns_1
+{
+
+STRUCT(B, fval, ival, a, iarray);
+
+} // namespace ns_1
+
+namespace ns_2
+{
+
+STRUCT(C, ival, bval, a, b);
+
+} // namespace ns_2

@@ -17,3 +17,6 @@ FetchContent_MakeAvailable(Eigen)
 add_executable(
         macro_fun
         macro_fun.cpp)
+add_executable(
+        serdes
+        serdes.cpp)
